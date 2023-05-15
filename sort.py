@@ -11,8 +11,7 @@ def sort(a: array, l: int, r: int) -> None:
             ri = i
             if j > 1:
                 merge(a, l, ri, li)
-            ri += 1
-            li = ri
+            li = ri + 1
 
 
 def merge(a: array, l, r, m):

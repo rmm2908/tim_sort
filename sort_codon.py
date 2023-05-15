@@ -57,8 +57,7 @@ def sort(a, l: int, r: int) -> None:
             ri = i
             if j > 1:
                 merge(a, l, ri, li)
-            ri += 1
-            li = ri
+            li = ri + 1
     # End implementation
 
 
