@@ -53,15 +53,12 @@ def sort(a, l: int, r: int) -> None:
     j = 0
     for i in range(l, r+1):
         j += 1
-        if li > ri:
-            ri = li
-        if not (i==r) and (a[i] <= a[i+1]):
-            ri = i+1
-        else:
+        if i == r or (a[i] > a[i+1]):
             ri = i
             if j > 1:
                 merge(a, l, ri, li)
-            li = ri+1
+            ri += 1
+            li = ri
     # End implementation
 
 
@@ -78,8 +75,6 @@ for i in range(numbers):
     number = randint(-numbers, numbers)
     a[i] = number
     expected.append(number)
-#    a.append(randint(-numbers, numbers))
-#expected = array.tolist(a)
 start_time = perf_counter()
 sort(a, 0, 4999)
 sort_time = perf_counter()-start_time

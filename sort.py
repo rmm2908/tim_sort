@@ -7,15 +7,12 @@ def sort(a: array, l: int, r: int) -> None:
     j = 0
     for i in range(l, r+1):
         j += 1
-        if li > ri:
-            ri = li
-        if not (i==r) and (a[i] <= a[i+1]):
-            ri = i+1
-        else:
+        if i == r or (a[i] > a[i+1]):
             ri = i
             if j > 1:
                 merge(a, l, ri, li)
-            li = ri+1
+            ri += 1
+            li = ri
 
 
 def merge(a: array, l, r, m):
