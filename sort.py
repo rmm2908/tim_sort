@@ -3,15 +3,11 @@ from array import array
 
 def sort(a: array, l: int, r: int) -> None:
     li = l
-    ri = l
-    j = 0
     for i in range(l, r+1):
-        j += 1
         if i == r or (a[i] > a[i+1]):
-            ri = i
-            if j > 1:
-                merge(a, l, ri, li)
-            li = ri + 1
+            if i > l:
+                merge(a, l, i, li)
+            li = i + 1
 
 
 def merge(a: array, l, r, m):
