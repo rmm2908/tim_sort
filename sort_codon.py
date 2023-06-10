@@ -49,15 +49,11 @@ def sort(a, l: int, r: int) -> None:
     """
     # Begin implementation
     li = l
-    ri = l
-    j = 0
     for i in range(l, r+1):
-        j += 1
         if i == r or (a[i] > a[i+1]):
-            ri = i
-            if j > 1:
-                merge(a, l, ri, li)
-            li = ri + 1
+            if i > j:
+                merge(a, l, i, li)
+            li = i + 1
     # End implementation
 
 
